@@ -485,12 +485,36 @@
 
         // ── Notifications ──
         nBox.innerHTML = allNotifs.slice(0, 6).map(x => `
-          <tr>
+          <tr class="${x.read ? '' : 'unread-notification'}" style="cursor:pointer" data-notification-id="${x._id}">
             <td style="width:46px">${x.read ? '' : '<span class="pill" style="font-size:10px;padding:2px 7px">NEW</span>'}</td>
             <td>${x.message}</td>
             <td class="muted" style="white-space:nowrap;font-size:12px">${formatDate(x.createdAt)}</td>
           </tr>
         `).join('') || `<tr><td colspan="3" class="muted">No notifications yet</td></tr>`;
+
+        // Add click handlers for marking notifications as read
+        qsa('.unread-notification').forEach(row => {
+          row.addEventListener('click', async () => {
+            const notificationId = row.dataset.notificationId;
+            try {
+              await api(`/api/notifications/${notificationId}/read`, { method: 'POST' });
+              // Update UI to mark as read
+              row.classList.remove('unread-notification');
+              const newPill = row.querySelector('.pill');
+              if (newPill) newPill.remove();
+              // Update unread count
+              const unreadNotifs = allNotifs.filter(n => !n.read);
+              const newCount = Math.max(0, unreadNotifs.length - 1);
+              const sN = qs('#statsNotifs');
+              if (sN) sN.textContent = newCount;
+              // Update notification in array
+              const notif = allNotifs.find(n => n._id === notificationId);
+              if (notif) notif.read = true;
+            } catch (err) {
+              toast('Failed to mark as read', 'bad');
+            }
+          });
+        });
 
         // ── Leaderboard ──────────────────────────────────────────────────
         try {
