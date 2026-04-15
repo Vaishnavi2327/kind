@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Browse Requests • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="browseRequests">
+    <div id="pageLoader"><div class="loader-logo">K</div><div class="loader-bar"></div></div>
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-12">
+          <div class="card-body">
+            <div class="row" style="align-items:end">
+              <div>
+                <h1>Browse Requests</h1>
+                <p>Open volunteer opportunities — sorted by proximity to your pincode.</p>
+              </div>
+              <div>
+                <form id="searchForm" class="actions" style="justify-content:flex-end">
+                  <input id="q" placeholder="Search by title..." />
+                  <select id="filterUrgency" style="width:auto">
+                    <option value="">All urgency</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                  <select id="filterCategory" style="width:auto">
+                    <option value="">All categories</option>
+                    <option>Education</option>
+                    <option>Medical</option>
+                    <option>Groceries</option>
+                    <option>Transport</option>
+                    <option>Elderly Care</option>
+                    <option>Children</option>
+                    <option>Disability Support</option>
+                    <option>Other</option>
+                  </select>
+                  <button class="btn primary" type="submit">Search</button>
+                  <a class="btn" href="/post-request.html">+ Post</a>
+                </form>
+              </div>
+            </div>
+
+            <h2 style="margin-top:18px;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)">Nearby Requests</h2>
+            <table class="table" style="margin-top:8px">
+              <thead>
+                <tr>
+                  <th>Request</th>
+                  <th>Urgency</th>
+                  <th>Volunteers</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="nearbyRequests"></tbody>
+            </table>
+
+            <h2 style="margin-top:22px;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)">Other Requests</h2>
+            <table class="table" style="margin-top:8px">
+              <thead>
+                <tr>
+                  <th>Request</th>
+                  <th>Urgency</th>
+                  <th>Volunteers</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="otherRequests"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink &mdash; built for community trust</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

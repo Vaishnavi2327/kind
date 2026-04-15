@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>General Complaint • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="generalComplaint">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-7">
+          <div class="card-body">
+            <h1>Submit a complaint</h1>
+            <p>This complaint is not tied to a task. It will be visible only to the admin.</p>
+            <form id="generalComplaintForm">
+              <label for="reason">Reason</label>
+              <textarea id="reason" required placeholder="Describe the issue…"></textarea>
+              <div class="actions">
+                <button class="btn primary" type="submit">Submit</button>
+                <a class="btn" href="/dashboard.html">Back</a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card col-5">
+          <div class="card-body">
+            <h2>Note</h2>
+            <p>You won’t see this complaint in “My complaints” because it’s admin-only review.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink • built for community trust</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>
+

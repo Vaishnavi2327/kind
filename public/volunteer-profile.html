@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Volunteer Profile • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="volunteerProfile">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-12">
+          <div class="card-body" style="text-align: center; padding: 40px 20px;">
+            <div id="vHero">Loading profile...</div>
+          </div>
+        </div>
+
+        <div class="card col-7">
+          <div class="card-body">
+            <h2>Recent Reviews</h2>
+            <div id="vReviews" style="margin-top: 16px;"></div>
+          </div>
+        </div>
+
+        <div class="card col-5">
+          <div class="card-body">
+            <h2>Skills & Achievements</h2>
+            <div style="margin-top:16px;">
+              <h3 style="font-size:12px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;">Skills</h3>
+              <div id="vSkills">No skills listed.</div>
+              <h3 style="font-size:12px;color:var(--muted);text-transform:uppercase;margin:24px 0 8px;">Badges</h3>
+              <div id="vBadges">No badges yet.</div>
+            </div>
+            <div class="actions" style="margin-top: 24px;">
+              <a class="btn" href="javascript:history.back()">Go Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

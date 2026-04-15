@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Post Request • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="postRequest">
+    <div id="pageLoader"><div class="loader-logo">K</div><div class="loader-bar"></div></div>
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-8">
+          <div class="card-body">
+            <h1>Post a Request</h1>
+            <p>Describe what you need so volunteers nearby can accept quickly.</p>
+            <form id="postRequestForm">
+              <label for="title">Title</label>
+              <input id="title" required placeholder="e.g. Need Math Tutor (Class 10)" maxlength="100" />
+
+              <label for="description">Description</label>
+              <textarea id="description" required placeholder="Explain the situation clearly so volunteers understand what is needed…" maxlength="600"></textarea>
+              <div class="char-count" id="descCount">600 characters remaining</div>
+
+              <div class="row">
+                <div>
+                  <label for="category">Category</label>
+                  <select id="category">
+                    <option>Education</option>
+                    <option>Medical</option>
+                    <option>Groceries</option>
+                    <option>Transport</option>
+                    <option>Elderly Care</option>
+                    <option>Children</option>
+                    <option>Disability Support</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="urgency">Urgency</label>
+                  <select id="urgency">
+                    <option>Low</option>
+                    <option selected>Medium</option>
+                    <option>High</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div>
+                  <label for="location">Location / Area</label>
+                  <input id="location" placeholder="e.g. Kurnool, Andhra Pradesh" />
+                </div>
+                <div>
+                  <label for="pincode">Pincode</label>
+                  <input id="pincode" required placeholder="518001" maxlength="6" />
+                </div>
+              </div>
+
+              <div class="row">
+                <div>
+                  <label for="volunteersNeeded">Volunteers Needed</label>
+                  <input type="number" id="volunteersNeeded" min="1" max="20" value="1" required />
+                </div>
+                <div>
+                  <label for="deadline">Deadline (optional)</label>
+                  <input type="date" id="deadline" />
+                </div>
+              </div>
+
+              <div class="actions" style="margin-top:16px">
+                <button class="btn primary" type="submit" id="submitBtn">Post Request</button>
+                <a class="btn" href="/dashboard.html">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card col-4">
+          <div class="card-body">
+            <h2>Writing tips</h2>
+            <p>Clear, specific titles get accepted faster. Include the subject, level, or context.</p>
+            <p style="margin-top:8px">Set <b>High</b> urgency only for genuinely time-sensitive needs. Volunteers prioritise high-urgency requests.</p>
+            <p style="margin-top:8px">Adding a <b>deadline</b> helps volunteers plan their availability.</p>
+            <div class="actions" style="margin-top:14px">
+              <a class="btn" href="/browse-requests.html">Browse open requests</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink &mdash; built for community trust</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

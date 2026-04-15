@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="login">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-12">
+          <div class="card-body">
+            <h1>Login</h1>
+            <p>Access your dashboard, tasks, chat and history.</p>
+            <form id="loginForm">
+              <label for="email">Email</label>
+              <input id="email" type="email" required placeholder="you@email.com" />
+              <label for="password">Password</label>
+              <input id="password" type="password" required placeholder="••••••••" />
+              <div class="actions">
+                <button class="btn primary" type="submit">Login</button>
+                <a class="btn" href="/register.html">Create account</a>
+                <a class="btn" href="/forgot-password.html">Forgot password</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink • built for community trust</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

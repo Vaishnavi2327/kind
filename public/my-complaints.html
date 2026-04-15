@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Complaints • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="myComplaints">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-12">
+          <div class="card-body">
+            <h1>My complaints</h1>
+            <p>Only you and the admin can see these.</p>
+            <table class="table" style="margin-top:14px">
+              <thead><tr><th>Status</th><th>Task</th><th>Reason</th><th>Created</th></tr></thead>
+              <tbody id="complaintsTbody"></tbody>
+            </table>
+            <div class="actions">
+              <a class="btn primary" href="/complaint.html">Raise complaint</a>
+              <a class="btn" href="/dashboard.html">Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink • built for community trust</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

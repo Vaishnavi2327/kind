@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Signup • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="register">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-7">
+          <div class="card-body">
+            <h1>Create account</h1>
+            <p>Every user can post requests and accept requests.</p>
+            <form id="registerForm">
+              <div class="row">
+                <div>
+                  <label for="name">Name</label>
+                  <input id="name" required placeholder="Ravi" />
+                </div>
+                <div>
+                  <label for="location">Location</label>
+                  <input id="location" placeholder="Kurnool" />
+                </div>
+              </div>
+              <label for="pincode">Pincode</label>
+              <input id="pincode" required placeholder="518001" />
+              <label for="email">Email</label>
+              <input id="email" type="email" required placeholder="ravi@gmail.com" />
+              <label for="password">Password</label>
+              <input id="password" type="password" required placeholder="Create a password" />
+              <div class="actions">
+                <button class="btn primary" type="submit">Signup</button>
+                <a class="btn" href="/login.html">Already have account</a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card col-5">
+          <div class="card-body">
+            <h2>Why this project stands out</h2>
+            <p>Chat + proper task tracking + feedback + notifications makes the workflow feel real.</p>
+            <div class="actions">
+              <a class="btn" href="/about.html">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink • built for community trust</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

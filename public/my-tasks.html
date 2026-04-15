@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Tasks • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="myTasks">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-12">
+          <div class="card-body">
+            <h1>My Tasks</h1>
+            <p>Split view: requests you posted vs tasks you accepted.</p>
+
+            <h2 style="margin-top:12px">Requests I Posted</h2>
+            <table class="table" style="margin-top:10px">
+              <thead><tr><th>Title</th><th>Status</th><th>Created</th><th></th></tr></thead>
+              <tbody id="postedTbody"></tbody>
+            </table>
+
+            <h2 style="margin-top:16px">Tasks I Accepted</h2>
+            <table class="table" style="margin-top:14px">
+              <thead><tr><th>Request</th><th>Status</th><th>Accepted</th><th>Actions</th></tr></thead>
+              <tbody id="acceptedTbody"></tbody>
+            </table>
+            <div class="actions">
+              <a class="btn" href="/dashboard.html">Back</a>
+              <a class="btn primary" href="/browse-requests.html">Browse</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink • built for community trust</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

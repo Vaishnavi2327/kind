@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>kindlink • Community Help & Volunteering</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="home">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="grid">
+          <div class="card col-12">
+            <div class="card-body">
+              <div class="pill">Help • Volunteer • Trust</div>
+              <h1 style="margin-top:12px">Match real needs with real people—fast.</h1>
+              <p>A smart, gamified platform where people who need assistance connect directly with neighborhood volunteers. Browse near your pincode, earn trust badges, and make real impact.</p>
+              <div class="actions">
+                <a class="btn primary" href="/register.html">Get started</a>
+                <a class="btn" href="/browse-requests.html">Browse requests</a>
+                <a class="btn" href="/about.html">How it works</a>
+              </div>
+              <p class="muted" style="margin-top:12px">Signed in as: <span data-who>Guest</span></p>
+
+              <div id="impactCounters" style="margin-top:24px;display:flex;gap:24px;flex-wrap:wrap;justify-content:center;padding-top:24px;border-top:1px solid var(--border);">
+                <div><div id="statReq" style="font-weight:900;font-size:24px;color:var(--brand)">--</div><div style="font-size:12px;color:var(--muted)">Requests</div></div>
+                <div><div id="statTasks" style="font-weight:900;font-size:24px;color:var(--accent)">--</div><div style="font-size:12px;color:var(--muted)">Completed Tasks</div></div>
+                <div><div id="statHrs" style="font-weight:900;font-size:24px;color:var(--ok)">--</div><div style="font-size:12px;color:var(--muted)">Volunteer Hours</div></div>
+                <div><div id="statVols" style="font-weight:900;font-size:24px;color:var(--warn)">--</div><div style="font-size:12px;color:var(--muted)">Awesome Neighbors</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card col-4"><div class="card-body" style="text-align:center">
+          <div style="font-size:32px;margin-bottom:8px">📝</div>
+          <h2>1. Post a Request</h2>
+          <p>Describe exactly what you need — from grocery runs to tutoring. Set the urgency, location, and deadline.</p>
+        </div></div>
+        <div class="card col-4"><div class="card-body" style="text-align:center">
+          <div style="font-size:32px;margin-bottom:8px">🤝</div>
+          <h2>2. Connect & Chat</h2>
+          <p>Local volunteers see your request and accept it. Coordinate details securely through the built-in Group Chat.</p>
+        </div></div>
+        <div class="card col-4"><div class="card-body" style="text-align:center">
+          <div style="font-size:32px;margin-bottom:8px">✨</div>
+          <h2>3. Earn Trust</h2>
+          <p>Once completed, both parties leave feedback. Volunteers earn Karma points and climb the Tier Leaderboard!</p>
+        </div></div>
+      </section>
+
+      <section class="grid" style="margin-top:24px">
+        <div class="card col-12">
+          <div class="card-body">
+            <h2 style="text-align:center;margin-bottom:16px">Why Use KindLink?</h2>
+            <div class="row" style="text-align:center">
+              <div>
+                <h3>🛡️ Safe & Secure</h3>
+                <p>Public profiles, rating history, and a robust flagging & complaint system ensure community accountability.</p>
+              </div>
+              <div>
+                <h3>📍 Hyper-local Matching</h3>
+                <p>Pincode-based sorting automatically surfaces the most critical needs in your immediate local area first.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink • built for community trust</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

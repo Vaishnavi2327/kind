@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Profile • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="profile">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-7">
+          <div class="card-body">
+            <div class="pill">View / Edit</div>
+            <h1 style="margin-top:10px">My Profile</h1>
+            <p>Update basic information. Rating is computed from feedback.</p>
+            <form id="profileForm">
+              <div class="row" style="align-items:center; gap:16px; margin-bottom:12px;">
+                <img id="avatarPreview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid var(--border)">
+                <div style="flex:1">
+                  <label for="avatarInput">Profile Photo</label>
+                  <input type="file" id="avatarInput" accept="image/*" style="padding-top:4px;border:none;background:transparent;box-shadow:none;">
+                </div>
+              </div>
+              <label for="name">Name</label>
+              <input id="name" required />
+              <div class="row">
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" disabled />
+                </div>
+                <div>
+                  <label>Access</label>
+                  <input value="Post + Accept enabled" disabled />
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <label for="location">Location</label>
+                  <input id="location" placeholder="City" />
+                </div>
+                <div>
+                  <label for="pincode">Pincode</label>
+                  <input id="pincode" placeholder="518001" />
+                </div>
+              </div>
+              <div class="row">
+                <div style="flex:1">
+                  <label>Skills <span class="muted">(comma separated)</span></label>
+                  <input id="skills" placeholder="e.g. driving, CPR, tutoring" />
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <label for="rating">Rating</label>
+                  <input id="rating" disabled />
+                </div>
+                <div></div>
+              </div>
+              <div class="actions">
+                <button class="btn primary" type="submit">Save</button>
+                <a class="btn" href="/dashboard.html">Back</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card col-5">
+          <div class="card-body">
+            <h2>Achievements & Trust</h2>
+            <p>Profiles show location and rating to build trust between requesters and volunteers.</p>
+            <div style="margin:20px 0;padding:12px;background:var(--panel2);border-radius:12px;border:1px solid var(--border)">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span class="muted">Volunteer Tier</span>
+                <span id="pTier">--</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span class="muted">Karma Points</span>
+                <span id="pKarma">--</span>
+              </div>
+              <div>
+                <span class="muted" style="display:block;margin-bottom:8px">Badges unlocked</span>
+                <div id="pBadges">Loading...</div>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/history.html">History</a>
+              <a class="btn" href="/my-tasks.html">My tasks</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink • built for community trust</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

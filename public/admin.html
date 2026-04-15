@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="admin">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-12">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start">
+              <div>
+                <div class="pill">Admin analytics</div>
+                <h1 style="margin-top:10px">Admin dashboard</h1>
+                <p>Platform health, activity, and completed tasks.</p>
+              </div>
+              <div class="actions">
+                <div class="dropdown" style="position:relative;display:inline-block">
+                  <button class="btn primary" id="btnExportCsv">Export CSV</button>
+                  <div id="exportDropdown" class="dropdown-menu" style="display:none;position:absolute;top:100%;left:0;background:var(--panel);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow);z-index:1000;min-width:200px;padding:8px 0">
+                    <a href="#" class="dropdown-item" data-export="users" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;hover:bg-var(--panel2)">Users</a>
+                    <a href="#" class="dropdown-item" data-export="requests" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;hover:bg-var(--panel2)">Requests</a>
+                    <a href="#" class="dropdown-item" data-export="tasks" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;hover:bg-var(--panel2)">Tasks</a>
+                    <a href="#" class="dropdown-item" data-export="feedback" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;hover:bg-var(--panel2)">Feedback</a>
+                    <a href="#" class="dropdown-item" data-export="complaints" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;hover:bg-var(--panel2)">Complaints</a>
+                    <a href="#" class="dropdown-item" data-export="analytics" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;hover:bg-var(--panel2)">Analytics</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="adminBox" style="margin-top:14px"></div>
+            
+            <div class="grid" style="margin-top:24px">
+              <div class="col-6"><canvas id="chartStatus" height="200"></canvas></div>
+              <div class="col-6"><canvas id="chartCat" height="200"></canvas></div>
+              <div class="col-12" style="margin-top:16px"><canvas id="chartDaily" height="120"></canvas></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card col-12">
+          <div class="card-body">
+            <h2>Broadcast Message</h2>
+            <p class="muted">Send a notification to all users.</p>
+            <form id="broadcastForm" style="margin-top:12px">
+              <div class="row">
+                <input id="broadcastMsg" placeholder="Emergency message..." required style="flex:1" />
+                <button class="btn warn" type="submit">Send to All</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card col-12">
+          <div class="card-body">
+            <h2>Complaints</h2>
+            <div id="complaintsList" class="muted" style="margin-top:10px">Loading…</div>
+          </div>
+        </div>
+
+        <div class="card col-12">
+          <div class="card-body">
+            <h2>General Complaints</h2>
+            <div id="generalComplaintsList" class="muted" style="margin-top:10px">Loading…</div>
+          </div>
+        </div>
+
+        <div class="card col-12">
+          <div class="card-body">
+            <h2>Users</h2>
+            <div id="usersList" class="muted" style="margin-top:10px">Loading…</div>
+          </div>
+        </div>
+
+        <div class="card col-12" style="border-left:4px solid var(--bad)">
+          <div class="card-body">
+            <h2>Flagged Requests (Suspicious)</h2>
+            <div id="flaggedList" class="muted" style="margin-top:10px">Loading…</div>
+          </div>
+        </div>
+
+        <div class="card col-12">
+          <div class="card-body">
+            <h2>All Requests</h2>
+            <p class="muted" style="margin-bottom:12px">Click the 📌 star icon to pin a request to the top of Browse.</p>
+            <div id="requestsList" class="muted">Loading…</div>
+          </div>
+        </div>
+
+        <div class="card col-12">
+          <div class="card-body">
+            <h2>Feedback overview</h2>
+            <div id="feedbackList" class="muted" style="margin-top:10px">Loading…</div>
+          </div>
+        </div>
+
+        <div class="card col-12">
+          <div class="card-body">
+            <h2>Promote a user to Admin (dev helper)</h2>
+            <p class="muted">Enable by setting <b>SEED_ADMIN_KEY</b> in your server env, then submit the same key here.</p>
+            <form id="seedAdminForm">
+              <div class="row">
+                <div>
+                  <label for="seedEmail">User email</label>
+                  <input id="seedEmail" type="email" placeholder="user@email.com" required />
+                </div>
+                <div>
+                  <label for="seedKey">Seed key</label>
+                  <input id="seedKey" placeholder="SEED_ADMIN_KEY" required />
+                </div>
+              </div>
+              <div class="actions">
+                <button class="btn warn" type="submit">Promote to Admin</button>
+                <a class="btn" href="/dashboard.html">Back</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink • built for community trust</footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

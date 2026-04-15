@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard • kindlink</title>
+    <meta name="description" content="Your kindlink dashboard — manage requests, tasks and community activity." />
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="dashboard">
+
+    <!-- Page loader -->
+    <div id="pageLoader">
+      <div class="loader-logo">K</div>
+      <div class="loader-bar"></div>
+    </div>
+
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+
+      <!-- Welcome Hero -->
+      <div class="dashboard-hero">
+        <div>
+          <p class="hero-greeting">Your Control Center</p>
+          <h1 id="welcomeName">Dashboard</h1>
+          <p class="hero-sub">Post help requests, volunteer for tasks, and make a real difference in your community — all in one place.</p>
+        </div>
+        <div class="hero-accent"></div>
+      </div>
+
+      <!-- Live Stats -->
+      <div class="stats-bar">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:rgba(14,165,233,.12);color:var(--brand)">REQ</div>
+          <div>
+            <div class="stat-num" id="statsRequests">—</div>
+            <div class="stat-label">Requests Posted</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:rgba(16,185,129,.12);color:var(--ok)">ACT</div>
+          <div>
+            <div class="stat-num" id="statsActiveTasks">—</div>
+            <div class="stat-label">Active Tasks</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:rgba(139,92,246,.12);color:var(--accent)">DONE</div>
+          <div>
+            <div class="stat-num" id="statsCompleted">—</div>
+            <div class="stat-label">Completed</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:rgba(245,158,11,.12);color:var(--warn);font-size:12px">ALERT</div>
+          <div>
+            <div class="stat-num" id="statsNotifs">—</div>
+            <div class="stat-label">Unread Alerts</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <section style="margin-bottom:24px">
+        <h2 class="section-title">Quick Actions</h2>
+        <div class="action-grid">
+          <a class="action-card primary-action" href="/post-request.html" id="actionPostRequest">
+            <div class="action-bar" style="background:var(--brand)"></div>
+            <div class="action-label">Post a Request</div>
+            <div class="action-sub">Ask your community for help with any task</div>
+          </a>
+          <a class="action-card" href="/browse-requests.html" id="actionBrowse">
+            <div class="action-bar" style="background:var(--ok)"></div>
+            <div class="action-label">Browse Requests</div>
+            <div class="action-sub">Find volunteering opportunities near you</div>
+          </a>
+          <a class="action-card" href="/my-tasks.html" id="actionMyTasks">
+            <div class="action-bar" style="background:var(--accent)"></div>
+            <div class="action-label">My Tasks</div>
+            <div class="action-sub">Manage your posted requests and accepted tasks</div>
+          </a>
+          <a class="action-card" href="/history.html" id="actionHistory">
+            <div class="action-bar" style="background:var(--muted)"></div>
+            <div class="action-label">History</div>
+            <div class="action-sub">Review all completed task history</div>
+          </a>
+          <a class="action-card" href="/my-complaints.html" id="actionMyComplaints">
+            <div class="action-bar" style="background:var(--warn)"></div>
+            <div class="action-label">My Complaints</div>
+            <div class="action-sub">Track the status of reports you submitted</div>
+          </a>
+          <a class="action-card warn-action" href="/general-complaint.html" id="actionComplaint">
+            <div class="action-bar" style="background:var(--bad)"></div>
+            <div class="action-label">Submit a Complaint</div>
+            <div class="action-sub">Report a platform issue directly to admin</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Notifications + Active Tasks -->
+      <div class="grid">
+        <div class="card col-6">
+          <div class="card-body">
+            <h2 class="section-title">Notifications</h2>
+            <table class="table" style="margin-top:10px">
+              <thead><tr><th style="width:50px"></th><th>Message</th><th style="white-space:nowrap">Time</th></tr></thead>
+              <tbody id="notifications"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card col-6">
+          <div class="card-body">
+            <h2 class="section-title">Active Tasks</h2>
+            <table class="table" style="margin-top:10px">
+              <thead><tr><th>Task</th><th>Status</th><th></th></tr></thead>
+              <tbody id="myTasks"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- My Requests full width -->
+        <div class="card col-12">
+          <div class="card-body">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+              <h2 class="section-title" style="margin:0">My Requests</h2>
+              <a class="btn primary" href="/post-request.html" style="font-size:13px">+ New Request</a>
+            </div>
+            <table class="table" style="margin-top:12px">
+              <thead><tr><th>Title</th><th>Status</th><th style="white-space:nowrap">Created</th><th></th></tr></thead>
+              <tbody id="myRequests"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink &mdash; connecting communities with care</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Task Details • kindlink</title>
+    <link rel="stylesheet" href="/assets/app.css?v=2" />
+  </head>
+  <body data-page="taskDetails">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="/index.html"><span class="logo"></span> kindlink</a>
+        <nav class="nav" data-nav></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card col-8">
+          <div class="card-body">
+            <h1>Task details</h1>
+            <div id="detailsBox" class="muted" style="margin-top:10px">Loading…</div>
+          </div>
+        </div>
+        <div class="card col-4">
+          <div class="card-body">
+            <h2>Actions</h2>
+            <p>Only the accepted helper can mark their task completed.</p>
+            <div class="actions">
+              <button class="btn ok" id="completeBtn" type="button">Mark completed</button>
+              <a class="btn warn" id="complaintBtn" href="/complaint.html">Raise complaint</a>
+              <a class="btn" href="/my-tasks.html">Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer">kindlink • built for community trust</footer>
+    <script src="/assets/app.js?v=2"></script>
+  </body>
+</html>
